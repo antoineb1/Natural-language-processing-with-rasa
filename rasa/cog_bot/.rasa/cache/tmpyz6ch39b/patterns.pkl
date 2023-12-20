@@ -1,0 +1,18 @@
+[
+  {
+    "name": "hat",
+    "pattern": "(\\bcap\\b|\\bbeanie\\b|\\bberet\\b)"
+  },
+  {
+    "name": "bag",
+    "pattern": "(\\bhandbag\\b|\\bbackpack\\b|\\bshoulder\\ bag\\b|\\bsuitcase\\b|\\bpurse\\b)"
+  },
+  {
+    "name": "color",
+    "pattern": "(\\bblack\\b|\\bblue\\b|\\bbrown\\b|\\bgray\\b|\\bgreen\\b|\\borange\\b|\\bpink\\b|\\bpurple\\b|\\bred\\b|\\bwhite\\b|\\byellow\\b)"
+  },
+  {
+    "name": "time",
+    "pattern": "(\\bone\\b|\\btwo\\b|\\bthree\\b|\\bfour\\b|\\bfive\\b|\\bsix\\b|\\bseven\\b|\\beight\\b|\\bnine\\b|\\bten\\b|\\beleven\\b|\\btwelve\\b|\\bthirteen\\b|\\bfourteen\\b|\\bfifteen\\b|\\bsixteen\\b|\\bseventeen\\b|\\beighteen\\b|\\bnineteen\\b|\\btwenty\\b|\\btwenty\\-one\\b|\\btwenty\\-two\\b|\\btwenty\\-three\\b|\\btwenty\\-four\\b|\\btwenty\\-five\\b|\\btwenty\\-six\\b|\\btwenty\\-seven\\b|\\btwenty\\-eight\\b|\\btwenty\\-nine\\b|\\bthirty\\b|\\bthirty\\-one\\b|\\bthirty\\-two\\b|\\bthirty\\-three\\b|\\bthirty\\-four\\b|\\bthirty\\-five\\b|\\bthirty\\-six\\b|\\bthirty\\-seven\\b|\\bthirty\\-eight\\b|\\bthirty\\-nine\\b|\\bforty\\b|\\bforty\\-one\\b|\\bforty\\-two\\b|\\bforty\\-three\\b|\\bforty\\-four\\b|\\bforty\\-five\\b|\\bforty\\-six\\b|\\bforty\\-seven\\b|\\bforty\\-eight\\b|\\bforty\\-nine\\b|\\bfifty\\b|\\bfifty\\-one\\b|\\bfifty\\-two\\b|\\bfifty\\-three\\b|\\bfifty\\-four\\b|\\bfifty\\-five\\b|\\bfifty\\-six\\b|\\bfifty\\-seven\\b|\\bfifty\\-eight\\b|\\bfifty\\-nine\\b|\\bsixty\\b)"
+  }
+]

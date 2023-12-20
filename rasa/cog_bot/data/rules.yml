@@ -1,0 +1,146 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  condition:
+  - active_loop: null
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Help user
+  steps:
+  - intent: ask_help
+  - action: utter_help
+
+- rule: Out of scope
+  steps:
+  - intent: out_of_scope
+  - action: action_openai_answer
+
+- rule: Ask the user to rephrase when fallback
+  steps:
+  - intent: nlu_fallback
+  - action: utter_rephrase
+
+- rule: count_path
+  steps:
+  - intent: count
+  - action: action_count
+
+- rule: Activate research form
+  steps:
+  - intent: research
+  - action: research_form
+  - active_loop: research_form
+
+- rule: Submit research form
+  condition:
+  - active_loop: research_form
+  steps:
+  - action: research_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_search
+
+- rule: goodbye while form running
+  condition:
+  - active_loop: research_form
+  steps:
+  - intent: goodbye
+  - action: utter_finishing_form
+  - action: research_form
+
+- rule: greet while form running
+  condition:
+  - active_loop: research_form
+  steps:
+  - intent: greet
+  - action: utter_finishing_form
+  - action: research_form
+
+- rule: mood_great while form running
+  condition:
+  - active_loop: research_form
+  steps:
+  - intent: mood_great
+  - action: utter_finishing_form
+  - action: research_form
+
+- rule: mood_unhappy while form running
+  condition:
+  - active_loop: research_form
+  steps:
+  - intent: mood_unhappy
+  - action: utter_finishing_form
+  - action: research_form
+
+- rule: affirm while form running
+  condition:
+  - active_loop: research_form
+  steps:
+  - intent: affirm
+  - action: utter_finishing_form
+  - action: research_form
+
+- rule: deny while form running
+  condition:
+  - active_loop: research_form
+  steps:
+  - intent: deny
+  - action: utter_finishing_form
+  - action: research_form
+
+- rule: idk while form running
+  condition:
+  - active_loop: research_form
+  steps:
+  - intent: idk
+  - action: utter_finishing_form
+  - action: research_form
+
+- rule: bot_challenge while form running
+  condition:
+  - active_loop: research_form
+  steps:
+  - intent: bot_challenge
+  - action: utter_finishing_form
+  - action: research_form
+
+- rule: ask_help while form running
+  condition:
+  - active_loop: research_form
+  steps:
+  - intent: ask_help
+  - action: utter_finishing_form
+  - action: research_form
+
+- rule: count while form running
+  condition:
+  - active_loop: research_form
+  steps:
+  - intent: count
+  - action: utter_finishing_form
+  - action: research_form
+
+- rule: stop while form running
+  condition:
+  - active_loop: research_form
+  steps:
+  - intent: research_stop
+  - action: utter_stop_research
+  - action: action_deactivate_loop
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null

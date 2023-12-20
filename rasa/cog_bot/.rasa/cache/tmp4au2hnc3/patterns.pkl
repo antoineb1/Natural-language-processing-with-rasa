@@ -1,0 +1,6 @@
+[
+  {
+    "name": "color",
+    "pattern": "(\\bblack\\b|\\bblue\\b|\\bbrown\\b|\\bgray\\b|\\bgreen\\b|\\borange\\b|\\bpink\\b|\\bpurple\\b|\\bred\\b|\\bwhite\\b|\\byellow\\b)"
+  }
+]

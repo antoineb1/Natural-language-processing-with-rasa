@@ -1,0 +1,112 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-bag",
+      "2": "I-bag",
+      "3": "L-bag",
+      "4": "U-bag",
+      "5": "B-color",
+      "6": "I-color",
+      "7": "L-color",
+      "8": "U-color",
+      "9": "B-gender",
+      "10": "I-gender",
+      "11": "L-gender",
+      "12": "U-gender",
+      "13": "B-hat",
+      "14": "I-hat",
+      "15": "L-hat",
+      "16": "U-hat",
+      "17": "B-lower_clothes",
+      "18": "I-lower_clothes",
+      "19": "L-lower_clothes",
+      "20": "U-lower_clothes",
+      "21": "B-upper_clothes",
+      "22": "I-upper_clothes",
+      "23": "L-upper_clothes",
+      "24": "U-upper_clothes",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-bag": 1,
+      "I-bag": 2,
+      "L-bag": 3,
+      "U-bag": 4,
+      "B-color": 5,
+      "I-color": 6,
+      "L-color": 7,
+      "U-color": 8,
+      "B-gender": 9,
+      "I-gender": 10,
+      "L-gender": 11,
+      "U-gender": 12,
+      "B-hat": 13,
+      "I-hat": 14,
+      "L-hat": 15,
+      "U-hat": 16,
+      "B-lower_clothes": 17,
+      "I-lower_clothes": 18,
+      "L-lower_clothes": 19,
+      "U-lower_clothes": 20,
+      "B-upper_clothes": 21,
+      "I-upper_clothes": 22,
+      "L-upper_clothes": 23,
+      "U-upper_clothes": 24,
+      "O": 0
+    },
+    "num_tags": 25
+  },
+  {
+    "tag_name": "role",
+    "ids_to_tags": {
+      "1": "B-lower_color",
+      "2": "I-lower_color",
+      "3": "L-lower_color",
+      "4": "U-lower_color",
+      "5": "B-upper_color",
+      "6": "I-upper_color",
+      "7": "L-upper_color",
+      "8": "U-upper_color",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-lower_color": 1,
+      "I-lower_color": 2,
+      "L-lower_color": 3,
+      "U-lower_color": 4,
+      "B-upper_color": 5,
+      "I-upper_color": 6,
+      "L-upper_color": 7,
+      "U-upper_color": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  },
+  {
+    "tag_name": "group",
+    "ids_to_tags": {
+      "1": "B-Lower",
+      "2": "I-Lower",
+      "3": "L-Lower",
+      "4": "U-Lower",
+      "5": "B-Upper",
+      "6": "I-Upper",
+      "7": "L-Upper",
+      "8": "U-Upper",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-Lower": 1,
+      "I-Lower": 2,
+      "L-Lower": 3,
+      "U-Lower": 4,
+      "B-Upper": 5,
+      "I-Upper": 6,
+      "L-Upper": 7,
+      "U-Upper": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

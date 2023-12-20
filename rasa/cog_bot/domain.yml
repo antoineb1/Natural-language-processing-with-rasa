@@ -1,0 +1,222 @@
+version: '3.1'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+
+intents:
+- goodbye
+- greet
+- mood_great
+- affirm
+- deny
+- idk
+- mood_unhappy
+- bot_challenge
+- ask_help
+- count
+- research
+- research_info
+- research_stop
+
+entities:
+- gender
+- hat
+- bag
+- upper_clothes
+- lower_clothes
+- color
+- roi_1
+- roi_2
+- time
+- greater
+- lower
+- equal
+- negation
+
+forms:
+  research_form:
+    ignored_intents:
+      - goodbye
+      - greet
+      - mood_great
+      - affirm
+      - deny
+      - mood_unhappy
+      - bot_challenge
+      - ask_help
+      - count
+    required_slots:
+      - gender
+      - bag
+      - hat
+      - upper_color
+      - lower_color
+
+slots:
+  gender:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: gender
+  hat:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: hat
+      conditions:
+        - active_loop: null
+    - type: from_intent
+      value: true
+      intent: affirm
+      conditions:
+        - active_loop: research_form
+          requested_slot: hat
+    - type: from_intent
+      value: false
+      intent: deny
+      conditions:
+        - active_loop: research_form
+          requested_slot: hat
+    - type: from_intent
+      value: unknown
+      intent: idk
+      conditions:
+        - active_loop: research_form
+          requested_slot: hat
+  bag:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: bag
+      conditions:
+        - active_loop: null
+    - type: from_intent
+      value: true
+      intent: affirm
+      conditions:
+        - active_loop: research_form
+          requested_slot: bag
+    - type: from_intent
+      value: false
+      intent: deny
+      conditions:
+        - active_loop: research_form
+          requested_slot: bag
+    - type: from_intent
+      value: unknown
+      intent: idk
+      conditions:
+        - active_loop: research_form
+          requested_slot: bag
+  upper_color:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: color
+      not_intent: research
+    - type: from_intent
+      value: unknown
+      intent: idk
+      conditions:
+        - active_loop: research_form
+          requested_slot: upper_color
+    - type: from_entity
+      entity: color
+      conditions:
+        - active_loop: research_form
+          requested_slot: upper_color
+    - type: custom
+      action: action_map_color_form
+      conditions:
+        - active_loop: research_form
+  lower_color:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: color
+      not_intent: research
+    - type: from_intent
+      value: unknown
+      intent: idk
+      conditions:
+        - active_loop: research_form
+          requested_slot: lower_color
+    - type: from_entity
+      entity: color
+      conditions:
+        - active_loop: research_form
+          requested_slot: lower_color
+    - type: custom
+      action: action_map_color_form
+      conditions:
+        - active_loop: research_form
+  roi_1:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: roi_1
+  roi_2:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: roi_2
+
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_help:
+  - text: I can tell you the number of the people in the shopping mall. Moreove I can help you to find someone in the store. How can I help you?
+  - text: I can count the people in the shopping mall or find a specific person. What you want to do?
+  - text: I can tell you the number of people, their features or assist in finding someone. How can I help you?
+  - text: I can count people, their features and find someone in the store. What do you need?
+  - text: I can provide you with the count of people in the store, along with their gender and clothing details. Additionally, I can assist you in locating a specific person. How can I assist you today?
+  - text: Whether you're interested in knowing the number of people in the store, their gender, or clothing, or if you want help finding someone specific, I've got you covered. What would you like to do?
+  - text: If you're looking to know the count of people in the shopping mall, details about their gender and clothing, or if you need assistance finding someone, just let me know. How may I assist you today?
+  - text: Whether it's counting people in the store, providing gender and clothing details, or assisting in locating someone, I'm here to help. What specific task are you interested in?
+  utter_ask_gender:
+  - text: Is the person male or female?
+  utter_ask_bag:
+  - text: Does the person have a bag?
+  utter_ask_hat:
+  - text: Does the person have a hat?
+  utter_ask_upper_color:
+  - text: What is the person wearing as upper garment?
+  utter_ask_lower_color:
+  - text: What is the person wearing as lower garment?
+  utter_submit:
+  - text: Ok, let me check...
+  utter_finishing_form:
+  - text: Before proceeding, let's collect all the information please. If you want to close this form, please say 'Stop'
+  utter_stop_research:
+  - text: Ok, I'll delete the information you gave me
+  utter_rephrase:
+  - text: Sorry, I didn't understand you question. Can you repeat?
+
+actions:
+- action_count
+- action_map_color_form
+- action_search
+- action_openai_answer
+- utter_submit
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_help

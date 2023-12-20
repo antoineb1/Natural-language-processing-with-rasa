@@ -1,0 +1,14 @@
+[
+  {
+    "name": "color",
+    "pattern": "(\\bblack\\b|\\bblue\\b|\\bbrown\\b|\\bgray\\b|\\bgreen\\b|\\borange\\b|\\bpink\\b|\\bpurple\\b|\\bred\\b|\\bwhite\\b|\\byellow\\b)"
+  },
+  {
+    "name": "upper_clothes",
+    "pattern": "(\\bshirt\\b|\\bjacket\\b|\\bt\\-shirt\\b|\\bjumper\\b|\\bsweater\\b|\\bhoodie\\b|\\bpolo\\b|\\bsuit\\b|\\bblouse\\b|\\blong\\-sleeved\\ shirt\\b)"
+  },
+  {
+    "name": "lower_clothes",
+    "pattern": "(\\btrousers\\b|\\bpants\\b|\\bjeans\\b|\\bskirt\\b|\\bshorts\\b|\\bjoggers\\b)"
+  }
+]

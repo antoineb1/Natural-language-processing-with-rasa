@@ -1,0 +1,613 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hi there
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - thanks, bye
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yes, he has
+    - yes, he does
+    - yes, she has
+    - yes, she does
+    - He has a bag
+    - He does have a hat
+    - She has a hat
+    - She does not have a bag
+    - He has got
+    - She has got
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - no, he hasn't
+    - no, he doesn't
+    - no, she hasn't
+    - no, she doesn't
+    - He hasn't a bag
+    - He doesn't have a hat
+    - She hasn't a hat
+    - She doesn't have a bag
+    - He has not
+    - She does not
+
+- intent: idk
+  examples: |
+    - idk
+    - i don't know
+    - i'm not sure
+    - can't remember
+    - i don't remember
+    - who knows
+    - can't tell you
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - fine
+    - alright
+    - could be worse
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - good
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - i am sad
+    - could be better
+    - not so good
+    - not so fine
+    - bad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: ask_help
+  examples: |
+    - Help me
+    - Please, help me
+    - I need assistance. How can you help me?
+    - I need your help. What can you do?
+    - I don't know what to do, how can you help me?
+    - I'm stuck
+    - Need help
+    - Help
+    - How can you help me?
+    - What can you do for me?
+    - What can you do?
+    - What can I ask for help?
+    - What assistance can you offer?
+    - Can you assist me?
+    - Assist me, please.
+    - Help me out.
+    - What services do you provide?
+    - I need assistance, what can you do?
+    - What can I ask you?
+    - How can you support me?
+    - What help is available?
+    - I need your support. What can you do?
+
+- intent: out_of_scope
+  examples: |
+    - I want to order some food
+    - Where's my car parked
+    - How many stars are in the universe?
+    - What is two plus two?
+    - Who's the US President?
+    - And of Italy?
+    - Do you know where I can find gameshops?
+    - What is the meaning of life?
+    - Are you a male or a female?
+    - How are you?
+    - How you doing?
+    - Who's Micheal Jackson?
+    - Who have you been invented by?
+    - Do you know what Napoli is?
+    - How many titles do Los Angeles Lakers have?
+
+- intent: research
+  examples: |
+    - Can you help me find a person?
+    - Could you help me find an individual?
+    - I can't find my [dad](gender), can you tell me where is him?
+    - I lost my [mom](gender), can you tell me where is her?
+    - I can't find my [son](gender), can you help me finding him?
+    - I lost my [daughter](gender), can you help me finding her?
+    - I can't see my [wife](gender) anywhere.
+    - I don't know where my [husband](gender) is.
+    - Have you seen my [son](gender)?
+    - Have you seen my [daughter](gender)?
+    - Do you know where my [son](gender) is?
+    - Do you know where my [daughter](gender) is?
+    - My [son](gender) is missing, do you know where is he?
+    - My [mom](gender) is missing, do you know where is she?
+    - Have you seen my [son](gender)? He has a [bag](bag: true), a [red](color) [t-shirt](upper_clothes) and [blue](color) [jeans](lower_clothes)
+    - Can you find my [daughter](gender)? She has a [bag](bag: true), a [white](color) [jacket](upper_clothes) and [pink](color) [trousers](lower_clothes)
+    - Have you seen my [dad](gender)? He has a [hat](hat: true), a [black](color) [shirt](upper_clothes) and [black](color) [pants](lower_clothes)
+    - Can you see my [mom](gender)? She has a [bag](bag: true), a [red](color) [top](upper_clothes) and [brown](color) [skirt](lower_clothes)
+    - Have you seen my [father](gender)? He has a [bag](bag: true), a [purple](color) [blouse](upper_clothes) and [yellow](color) [shorts](lower_clothes)
+    - Would you tell me where my [mother](gender) is? She has a [hat](hat: true), a [orange](color) [hoodie](upper_clothes) and [blue](color) [jeans](lower_clothes)
+    - Have you seen my [son](gender)? He has a [white](color) [bag](bag: true), a [red](color) [t-shirt](upper_clothes) and [blue](color) [jeans](lower_clothes)
+    - Have you seen my [daughter](gender)? She has a [pink](color) [hat](hat: true), a [purple](color) [blouse](upper_clothes) and [gray](color) [pants](lower_clothes)
+    - Have you seen a person with a [pink](color) [hat](hat: true), a [purple](color) [blouse](upper_clothes) and [gray](color) [pants](lower_clothes)?
+    - Can you help me find an individual a [white](color) [hat](hat: true), a [black](color) [hoodie](upper_clothes) and [white](color) [pants](lower_clothes)?
+    - I can't find my [son](gender). He is wearing a [blue](color) [shirt](upper_clothes) and a [backpack](bag:true)
+    - I cant't see my [daughter](gender). She is wearing a [black](color) [pants](lower_clothes) and a [red](color) [shirt](upper_clothes)
+    - Can you help me to find my [wife](gender). She has a [blue](color) [cardigan](upper_clothes) and a [purse](bag:true)
+    - Help me! I lost my [son](gender). he has a [black](color) [hoodie](upper_clothes) and a [backpack](bag:true)
+    - I need help, I'm searching for my [dad](gender) he has a [blue](color) [jacket](upper_clothes) and a [gray](color) [trousers](lower_clothes)
+    - Help me to find my [brother](gender), he has a [blue](color) [joggers](lower_clothes) and a [white](color) [hoodie](upper_clothes)
+    - My [sister](gender) is wearing a [black] [top](upper_clothes) and a [handbag](bag:true). Can you find her in the store?
+    - I've lost my [uncle](gender). He is wearing an [hat](hat:true) and has a [blue](color) [jacket](upper_clothes)
+    - I'm searching for my [mom](gender)
+    - I've lost my [son](gender)
+    - Search a [man](gender) with a [beret](hat:true) and a [suitcase](bag:true)
+    - I'm searching a [woman](gender) with a [green](color) [jacket](upper_clothes) and a [hat](hat:true)
+    - Where is my [son](gender)? He is dressed with a [yellow](color) [pants](lower_clothes) and a [white] [pullover](upper_clothes)
+    - My sibling is missing. he has a [purple](color) [jacket](upper_clothes) and a [suitcase](bag:true)
+    - I'm looking for a [man](gender)
+    - I'm looking for a [woman](gender)
+
+- intent: research_info
+  examples: |
+    - He is a [male](gender)
+    - She is a [female](gender)
+    - [male](gender)
+    - [female](gender)
+    - [boy](gender)
+    - [girl](gender)
+    - [man](gender)
+    - [woman](gender)
+    - He has a [red](color) [t-shirt](upper_clothes)
+    - She has a [red](color) [t-shirt](upper_clothes)
+    - He has [blue](color) [pants](lower_clothes)
+    - She has [blue](color) [pants](lower_clothes)
+    - He is wearing a [white](color) [jacket](upper_clothes)
+    - She is wearing [purple](color) [pants](lower_clothes)
+    - She has a [pink](color) [polo](upper_clothes) on
+    - He has [yellow](color) [trousers](lower_clothes) on
+    - He wears a [brown](color) [jumper](upper_clothes)
+    - She wears [green](color) [shorts](lower_clothes)
+    - A [gray](color) [hoodie](upper_clothes)
+    - An [orange](color) [skirt](lower_clothes)
+
+- intent: research_stop
+  examples: |
+    - Nevermind
+    - Stop the research
+    - Actually, I found him. Nevermind
+    - Actually, I found her. Nevermind
+    - Don't worry about it
+    - Stop
+    - Interrupt this process
+    - I don't want to continue
+
+- intent: count
+  examples: |
+    - How many people remained in the [DIEM](roi_2) for [more than](greater) [ten](time) minutes?
+    - How many people remained in the [DIEM](roi_2) [over](greater) [nine](time) minutes?
+    - How many people remained in the [MIVIA](roi_1) [above](greater) [two](time) minutes?
+    - how many people remained in the [diem](roi_2) [greater](greater) [thirty](time) minutes?
+    - How many people remained in the [DIEM](roi_2) [exceeding](greater) [six](time) minutes?
+    - How many people remained in the [DIEM](roi_2) [upper](greater) [one](time) minutes?
+    - How many people remained in the [MIVIA](roi_1) for [less than](lower) [twelve](time) minutes?
+    - Could you count how many people stayed in the [MIVIA](roi_1) for [less than](lower) [zero](time) minutes?
+    - how many people remained in the [diem](roi_2) [under](lower) [four](time) minutes?
+    - How many people remained in the [MIVIA](roi_1) for [below](lower) [seven](time) minutes?
+    - how many people remained in the [diem](roi_2) [lower](lower) [eight](time) minutes?
+    - how many people remained in the [diem](roi_2) [equal](equal) [five](time) minutes?
+    - How many people remained in the [MIVIA](roi_1) for [exactly](equal) [three](time) minutes?
+    - how many people remained in the [diem](roi_2) [precisely](equal) [eleven](time) minutes?
+    - how many people stayed in the [diem](roi_2) for [equal](equal) [zero](time) minutes?
+    - how many people stayed in the [mivia](roi_1) and in the [diem](roi_2) for [zero](time) minutes?
+    - how many people stayed in the [diem](roi_2) for [sixteen](time) minutes?
+    - how many people stayed in the [diem](roi_2) and in the [MIVIA](roi_1) for [twenty-three](time) minutes?
+    - Are there people with [hat](hat:true)?
+    - there are people with [hat](hat:true)?
+    - Are there people with a [bag](bag:true)?
+    - there are people with a [bag](bag:true)?
+    - How many [male](gender) are in the mall?
+    - How many [males](gender) are there?
+    - there are [man](gender) in the mall?
+    - there are [men](gender) here?
+    - How many [guy](gender) are in the mall?
+    - How many [boy](gender) are there?
+    - there are [guys](gender) in the mall?
+    - there are [boys](gender) here?
+    - How many [female](gender) are in the mall?
+    - How many [woman](gender) are there?
+    - there are [lady](gender) in the mall?
+    - there are [girl](gender) here?
+    - How many [women](gender) are in the mall?
+    - How many [females](gender) are there?
+    - there are [ladies](gender) in the mall?
+    - there are [girls](gender) here?
+    - Could you tell me how many people are wearing a [black](color) [t-shirt](upper_clothes)?
+    - How many people are wearing a [blue](color) [jacket](upper_clothes)?
+    - Could you tell me how many people are wearing a [brown](color) [sweater](upper_clothes)?
+    - Could you tell me how many people are wearing a [gray](color) [polo](upper_clothes)?
+    - How many people are wearing a [green](color) [hoodie](upper_clothes)?
+    - Could you tell me how many people are wearing a [orange](color) [blouse](upper_clothes)?
+    - How many people are wearing a [pink](color) [jumper](upper_clothes)?
+    - Could you tell me how many people are wearing a [purle](color) [suit](upper_clothes)?    
+    - Could you tell me how many people are wearing a [red](color) [shirt](upper_clothes)?
+    - Could you tell me how many people are wearing a [white](color) [long-sleeved shirt](upper_clothes)?
+    - How many people are wearing a [yellow](color) [skirt](lower_clothes)?
+    - How many people are wearing a [black](color) [joggers](lower_clothes)?
+    - How many people are wearing a [blue](color) [shorts](lower_clothes)?
+    - How many people are wearing a [brow](color) [pants](lower_clothes)?
+    - How many people are wearing a [gray](color) [trousers](lower_clothes)?
+    - How many people are wearing a [green](color) [jeans](lower_clothes)?
+    - Could you count how many people are in the [MIVIA](roi_1)?
+    - how many people are in the [DIEM](roi_2)?
+    - How many people are passed in the [DIEM](roi_2) and also in the [MIVIA](roi_1)?
+    - how many people with [hat](hat:true) and a [bag](bag:true) are there?
+    - how many [male](gender) with [hat](hat:true) are there? 
+    - Could you tell me how many people are wearing a [blue](color) [t-shirt](upper_clothes) and a [hat](hat:true)?
+    - How many people are wearing a [pink](color) [skirt](lower_clothes) and a [hat](hat:true)?
+    - how many [male](gender) with a [bag](bag:true) are there?
+    - Could you tell me how many people are wearing a [red](color) [t-shirt](upper_clothes) and a [bag](bag:true)?
+    - How many people are wearing a [pink](color) [skirt](lower_clothes) and a [bag](bag:true)?
+    - How many [male](gender) are wearing a [orange](color) [jacket](upper_clothes)?
+    - How many [female](gender) are wearing a [purple](color) [polo](upper_clothes)?
+    - Could you tell me how many [male](gender) are wearing a [red](color) [t-shirt](upper_clothes)?
+    - Could you tell me how many [female](gender) are wearing a [red](color) [t-shirt](upper_clothes)?
+    - How many [male](gender) are wearing [black](color) [pants](lower_clothes)?
+    - How many [female](gender) are wearing [white](color) [shorts](lower_clothes)?
+    - How many people are wearing [blue](color) [pants](lower_clothes) and a [green](color) [jumper](upper_clothes)?
+    - How many people are wearing [purple](color) [shorts](lower_clothes) and a [black](color) [long-sleeved shirt](upper_clothes)?
+    - Could you inform me of the quantity of people donning a [pink](color) [t-shirt](upper_clothes) while also having a [gray](color) [skirt](lower_clothes)?
+    - how many [male](gender) with [hat](hat:true) and a [bag](bag:true) are there? 
+    - how many people with [green](color) [jacket](upper_clothes) a [hat](hat:true) and a [bag](bag:true) are there? 
+    - how many people with [gray](color) [trousers](lower_clothes) a [hat](hat:true) and a [bag](bag:true) are there? 
+    - how many [male](gender) with [hat](hat:true) and a [orange](color) [shirt](upper_clothes) are there? 
+    - how many [female](gender) with [hat](hat:true) and a [yellow](color) [skirt](lower_clothes) are there? 
+    - how many [female](gender) with [blue](color) [t-shirt](upper_clothes) and a [yellow](color) [skirt](lower_clothes) are there? 
+    - how many [male](gender) with a [bag](bag:true) and [brown](color) [long-sleeved shirt](upper_clothes) are there?
+    - how many [female](gender) with a [bag](bag:true) and [brown](color) [skirt](lower_clothes) are there?
+    - how many people have a [bag](bag: true), a [pink](color) [shirt](upper_clothes) and a [blue](color) [pants](lower_clothes)?
+    - How many [males](gender) have a [red](color) [shirt](upper_clothes) and a [yellow](color) [pants](lower_clothes)?
+    - Can you tell me the [females](gender) with a [hat](hat: true), a [bag](bag: true) and a [pink](color) [shirt](upper_clothes)?
+    - Can you tell me the [males](gender) with a [hat](hat: true), a [bag](bag: true) and a [green](color) [trousers](lower_clothes)?
+    - Tell me the people with a [hat](hat: true), a [bag](bag: true), [gray](color) [trousers](lower_clothes) and a [yellow](color) [shirt](upper_clothes)?
+    - How many [males](gender) are currently wearing a [hat](hat: true), a [red](color) [shirt](upper_clothes) and a [gray](color) [trousers](lower_clothes)?
+    - Tell me the numer of [females](gender) that are wearing a [bag](bag: true), a [purple](color) [t-shirt](upper_clothes) and a [brown](color) [trousers](lower_clothes)?
+    - Can you tell me the number of [females](gender) with a [bag](bag: true), a [hat](hat: true), a [white](color) [jumper](upper_clothes) and a [gray](color) [skirt](lower_clothes)?
+    - How many people are there [without](negation) a [hat](hat:true)?
+    - How many people are there [without](negation) a [bag](bag:true)?
+    - How many people are [not wearing](negation) a [hat](hat: true) and [not wearing](negation) a [bag](bag: true)?
+    - How many people are there [without](negation) a [hat](hat: true) and  [without](negation) a [bag](bag:true)?
+    - How many people [aren't](negation) [males](gender) are in the mall [not wearing](negation) a [hat](hat:true)?
+    - How many [aren't](negation) [females](gender) are there [without](negation) a [bag](bag:true)?
+    - Can you count how many people are [not wearing](negation) a [black](color) [t-shirt](upper_clothes)?
+    - How many people [aren't wearing] a [blue](color) [jacket](upper_clothes)?
+    - Tell me the number of people [without](negation) a [green](color) [hoodie](upper_clothes).
+    - Count the number of people [not wearing](negation) a [yellow](color) [skirt](lower_clothes).
+    - Count those [not wearing](negation) [blue](color) [shorts](lower_clothes).
+    - How many people [aren't wearing] [brown](color) [pants](lower_clothes)?
+    - Count the number of people [not wearing](negation) a [blue](color) [t-shirt](upper_clothes) and [without](negation) a [hat](hat:true).
+    - How many [aren't wearing] a [pink](color) [skirt](lower_clothes) and [without](negation) a [hat](hat:true)?
+    - How many people are dressed in [black](color) [pants](lower_clothes) paired with a [yellow](color) [t-shirt](upper_clothes)?
+    - How many individuals have [blue](color) [pants](lower_clothes) and a [white](color) [polo](upper_clothes)?
+    - Count the number of people in [brown](color) [pants](lower_clothes) and a [red](color) [jacket](upper_clothes)
+    - Count individuals with a [hat](hat:true), [bag](bag: true), [purple](color) [t-shirt](upper_clothes), and [gray](color) [joggers](lower_clothes)
+    - Can you tell me the count of individuals with [green](color) [pants](lower_clothes) and a [pink](color) [sweater](upper_clothes)?
+    - Find out how many people are wearing a [green](color) [sweater](upper_clothes) and [orange](color) [pants](lower_clothes)
+    - Tell me how many individuals are dressed in [pink](color) [shorts](lower_clothes) and [orange](color) [t-shirt](upper_clothes)
+    - Tell me the number of individuals wearing [purple](color) [pants](lower_clothes) and a [green](color) [long-sleeved shirt](upper_clothes)
+    - Tell me the number of people wearing a [hat](hat: true), carrying a [bag](bag: true), with a [gray](color) [hoodie](upper_clothes) and [red](color) [joggers](lower_clothes)
+    - How many people have a [hat](hat: true), carry a [bag](bag: true), wear a [brown](color) [jumper](upper_clothes), and [white](color) [joggers](lower_clothes)?
+    - Tell me the count of individuals with a [hat](hat: true), [bag](bag: true), [blue](color) [t-shirt](upper_clothes), and [yellow](color) [joggers](lower_clothes)
+    - Count the number of people dressed in a [hat](hat: true), holding a [bag](bag: true), wearing a [black](color) [jumper](upper_clothes), and [pink](color) [joggers](lower_clothes)
+    - Give me the number of individuals who have a [hat](hat: true), a [bag](bag: true), a [blue](color) [t-shirt](upper_clothes), and [gray](color) [joggers](lower_clothes)
+    - Give me the count of individuals dressed in [purple](color) [trousers](lower_clothes) and a [blue](color) [t-shirt](upper_clothes)
+    - Could you count how many people [aren't](negation) in the [MIVIA](roi_1)?
+    - how many people [are not](negation) in the [DIEM](roi_2)?
+    - How many people [aren't](negation) passed in the [DIEM](roi_2) and also in the [MIVIA](roi_1)?
+    - How many people [didn't](negation) remained in the [DIEM](roi_2) for [more than](greater) [ten](time) minutes?
+    - How many people are [not](negation) in the [DIEM](roi_2) for [less than](lower) [nine](time) minutes?
+    - how many people [didn't](negation) stay in the [diem](roi_2) for [forty](time) minutes?
+    - how many people [didn't](negation) stay in the [diem](roi_2) and in the [MIVIA](roi_1) for [twenty](time) minutes?
+    - How many individuals stayed in the [DIEM](roi_2) for [less than](lower) [five](time) minutes?
+    - What is the number of people who remained in the [MIVIA](roi_1) for [more](greater) [thanthree](time) minutes?
+    - How many people were in the [DIEM](roi_2) for [over](greater) [fifteen](time) minutes?
+    - What is the count of individuals who stayed in the [DIEM](roi_2) for [more than](greater) [ten](time) minutes?
+    - How many people remained in the [DIEM](roi_2) [longer than](greater) [ten](time) minutes?
+    - What is the number of people who stayed in the [MIVIA](roi_1) for [over](greater) [two](time) minutes?
+    - How many individuals were in the [DIEM](roi_2) for [less than](lower) [two](time) minutes?
+    - What is the count of people who remained in the [DIEM](roi_2) for [above](greater) [fifty](time) minutes?
+    - How many people were in the [MIVIA](roi_1) for [under](lower) [three](time) minute?
+    - What is the number of individuals who stayed in the [DIEM](roi_2) for [over](greater) [twenty](time) minutes?
+    - could you count for me the number of people that passed in the [MIVIA](roi_1) for [less than](lower) [three](time) miuntes
+    - Can you find out how many people [didn't](negation) stay in the [DIEM](roi_2) for [more than](greater) [five](time) minutes and in the [MIVIA](roi_1) for [exactly](equal) [forty](time) minutes?
+    - Tell me the number of people that [aren't](negation) remained in the [MIVIA](roi_1) [longer than](greater) [eleven](time) minutes and in the [DIEM](roi_2) for [less than](lower) [twenty](time) minutes
+    - Can you search for me the number of the people that [weren't](negation) in [MIVIA](roi_1) for [less than](lower)
+    - Can you find the number of people that [weren't](negation) wearing a [cap](hat:false) 
+    - What is the amount of people with a [suitcase](bag:true) and [were not](negation) wearing a [beret](hat:false)
+    - What is the number of [female](gender) that [was not](negation) wearing a [beanie](hat:false)
+    - Tell me the amount of [male](gender) that [wasn't](negation) with a [backpack](bag:false)
+    - Can you give me the number of people with a [shoulder bag](bag:true) and a [blue](color) [jeans](lower_clothes)
+    - Serch the number of people with a [handbag](bag:true) and a [black](color) [jacket](upper_clothes)
+    - Can you tell me the number of people that [are not](negation) carring a [purse](bag:false)
+    - Find the number of [female](gender) with a [handbag](bag:true) and a [blue](color) [shirt](upper_clothes)
+    - Count me the people in the [MIVIA](roi_1) for [more](greater) than [ten](time) minutes with [red](color) [shirt](upper_clothes)
+    - Tell me the number of [girls](gender) that passed in the [DIEM](roi_2) for [less than](lower) [four](time) miuntes wearing a [purple](color) [jacket](upper_clothes)
+
+- synonym: male
+  examples: |
+    - males
+    - man
+    - men
+    - guy
+    - boy
+    - guys
+    - boys
+    - son
+    - sons
+    - father
+    - fathers
+    - dad
+    - dads
+    - husband
+    - brother
+    - brothers
+    - uncle
+    - grandpa
+    - grandfather
+
+- synonym: female
+  examples: |
+    - woman
+    - lady
+    - girl
+    - women
+    - females
+    - ladies
+    - girls
+    - daughter
+    - daughters
+    - mother
+    - mothers
+    - mom
+    - moms
+    - wife
+    - sister
+    - sisters
+    - aunt
+    - grandma
+    - grandmother
+
+- synonym: upper_clothes
+  examples: |
+    - t-shirt
+    - shirt
+    - jacket
+    - jumper
+    - sweater
+    - hoodie
+    - polo
+    - suit
+    - blouse
+    - long-sleeved shirt
+    - top
+    - cardigan
+    - pullover
+
+- synonym: lower_clothes
+  examples: |
+    - trousers
+    - jeans
+    - skirt
+    - shorts
+    - joggers
+    - pants 
+
+- synonym: roi1_passages
+  examples: |
+    - MIVIA
+    - mivia
+
+- synonym: roi2_passages
+  examples: |
+    - DIEM
+    - diem
+
+- synonym: negation
+  examples: |
+    - without
+    - not wearing
+    - aren't
+    - are not
+    - didn't
+    - not
+    - don't
+    - doesn't
+    - were not
+    - weren't
+    - was not
+    - wasn't
+
+- synonym: greater
+  examples: |
+    - more than
+    - more
+    - over
+    - above
+    - greater
+    - exceeding
+    - upper 
+    - longer than
+
+- synonym: lower
+  examples: |
+    - less than
+    - less
+    - under
+    - below 
+    - lower 
+
+- synonym: equal
+  examples: |
+    - equal
+    - exactly
+    - precisely
+
+- lookup: hat
+  examples: |
+    - cap
+    - beanie
+    - beret
+
+- lookup: bag
+  examples: |
+    - handbag
+    - backpack
+    - shoulder bag
+    - suitcase
+    - purse
+
+- lookup: color
+  examples: |
+    - black
+    - blue
+    - brown
+    - gray
+    - green
+    - orange
+    - pink
+    - purple
+    - red
+    - white
+    - yellow
+
+- lookup: time
+  examples: |
+    - one
+    - two
+    - three
+    - four
+    - five
+    - six
+    - seven
+    - eight
+    - nine
+    - ten
+    - eleven
+    - twelve
+    - thirteen
+    - fourteen
+    - fifteen
+    - sixteen
+    - seventeen
+    - eighteen
+    - nineteen
+    - twenty
+    - twenty-one
+    - twenty-two
+    - twenty-three
+    - twenty-four
+    - twenty-five
+    - twenty-six
+    - twenty-seven
+    - twenty-eight
+    - twenty-nine
+    - thirty
+    - thirty-one
+    - thirty-two
+    - thirty-three
+    - thirty-four
+    - thirty-five
+    - thirty-six
+    - thirty-seven
+    - thirty-eight
+    - thirty-nine
+    - forty
+    - forty-one
+    - forty-two
+    - forty-three
+    - forty-four
+    - forty-five
+    - forty-six
+    - forty-seven
+    - forty-eight
+    - forty-nine
+    - fifty
+    - fifty-one
+    - fifty-two
+    - fifty-three
+    - fifty-four
+    - fifty-five
+    - fifty-six
+    - fifty-seven
+    - fifty-eight
+    - fifty-nine
+    - sixty
